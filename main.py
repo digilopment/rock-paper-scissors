@@ -68,7 +68,7 @@ class HumanPlayer(Player):
             exit()
         else:
             string = 'bad input, please select number bellow'
-            print string
+            print (string)
             return self.choice()
 
 
@@ -100,7 +100,7 @@ class Game:
     def getRoundTitle(self):
         string = '\n' + '=' * 15 + ' ROUND: ' + str(self.roundNumber) \
             + ' ' + '=' * 15
-        print string
+        print (string)
 
     def setName(self):
         val = input('Your name: ')
@@ -117,7 +117,7 @@ class Game:
         elif self.humanChoice == self.computerChoice:
             self.winner = 'TIE'
             string = '=' * 15 + ' TIE REPEATING ROUND ' + '=' * 15
-            print string
+            print (string)
             self.repeatRound()
         else:
             self.computerScore += 1
@@ -141,7 +141,7 @@ class Game:
             + '\nWinner of the round: ' + self.winner \
             + '\nYour score is: ' + str(self.yourScore) + ' / ' \
             + str(self.computerScore)
-        print string
+        print (string)
 
     def play_round(self):
         self.setRound()
@@ -152,8 +152,9 @@ class Game:
 
     def finalText(self):
         string = '=' * 15 + ' REPEATED ROUNDS: ' \
-            + str(self.getRepeatedRounds()) + ' ' + '=' * 15 + '=' * 15 \
-            + ' REGULAR ROUNDS: ' + str(self.rounds) + ' ' + '=' * 15 \
+            + str(self.getRepeatedRounds()) + ' ' + '=' * 15 \
+            + '\n' + '=' * 15 \
+            + ' REGULAR ROUNDS: ' + str(self.rounds) + ' ' + '=' * 15 + '\n' \
             + '=' * 15 + ' TOTAL ROUNDS: ' + str(self.roundNumber) \
             + ' ' + '=' * 15
         return string
@@ -163,23 +164,23 @@ class Game:
             string = '=' * 15 \
                 + ' TIE, PLEASE PLAY A FINAL ROUND IN THIS GAME: ' \
                 + '=' * 15 + '\n' + self.finalText()
-            print string
+            print (string)
             self.play_round()
             self.finalResult()
         elif self.yourScore > self.computerScore:
-            string = '\n' + '=' * 15 + ' ABSOLUTE WINNER IS: ' \
+            string = '\n' + '=' * 15 + '\nABSOLUTE WINNER IS: ' \
                 + self.name + ' ' + '=' * 15 + '\n' + self.finalText() \
-                + 'FINAL RESULT' + self.name + ': ' \
+                + '\nFINAL RESULT:\n' + self.name + ': ' \
                 + str(self.yourScore) + 'Computer: ' \
                 + str(self.computerScore)
-            print string
+            print (string)
         else:
             string = '\n' + self.finalText() \
-                + 'ABSOLUTE WINNER IS: COMPUTER ' + '=' * 20 \
-                + '\nFINAL RESULT' + 'Computer: ' \
+                + '\nABSOLUTE WINNER IS: COMPUTER ' + '=' * 20 \
+                + '\nFINAL RESULT:\n' + 'Computer: ' \
                 + str(self.computerScore) + self.name + ': ' \
                 + str(self.yourScore)
-            print string
+            print (string)
 
     def play_game(self):
         self.setName()
