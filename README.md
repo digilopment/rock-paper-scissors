@@ -1,6 +1,7 @@
 # Rock, Paper, Scissors (PEP8 coding style)
 ##### **[Kamen, Papier, Noznice]** #####
-Mini hra napisana v Pythone ako test OOP programovania v tomto jazyku. Hra disponuje 5 strategiami:
+
+### Mini hra napisana v Pythone ako test OOP programovania v tomto jazyku. Hra disponuje 5 strategiami: ###
 - **RandomPlayer** - nahodny vyber tahu pre pocitac
 - **ReflectPlayer** - pocitac reflectuje ludsky tah z predchadzajuceho kola 
 - **RockPlayer** - pocitac hra vzdy **Kameň**
